@@ -8,6 +8,7 @@ from google.genai import types
 from agents.budget_agent import budget_agent
 from agents.guest_agent import guest_agent
 from agents.vendor_agent import vendor_agent
+from tools.calendar_tool import calendar_tool, timeline_tool
 
 load_dotenv()
 
@@ -29,6 +30,7 @@ orchestrator = Agent(
     1. BUDGET - When user asks about budget, costs, expenses, allocations
     2. GUESTS - When user asks about guest list, RSVPs, dietary needs, seating
     3. VENDORS - When user asks about photographers, venues, caterers, decorators, emails to vendors
+    4. TIMELINE - When user asks about scheduling ceremonies, dates, calendar
     
     For any query:
     - Identify which area it belongs to
@@ -39,7 +41,11 @@ orchestrator = Agent(
     
     You are planning an Indian wedding and understand traditions like
     Mehendi, Sangeet, Haldi, Pheras, and other ceremonies.
+    You have tools to schedule ceremonies and create wedding timelines.
+    Always use these tools when users ask about ceremony scheduling.
+    Keep responses warm and culturally aware of Indian weddings.
     """,
+    tools=[calendar_tool, timeline_tool],
     sub_agents=[budget_agent, guest_agent, vendor_agent]
 )
 
