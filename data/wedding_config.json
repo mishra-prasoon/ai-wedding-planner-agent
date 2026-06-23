@@ -1,0 +1,101 @@
+{
+  "wedding": {
+    "bride": "Priya Sharma",
+    "groom": "Rahul Verma",
+    "wedding_date": "2026-12-11",
+    "location": "Lucknow, Uttar Pradesh",
+    "religion": "Hindu",
+    "total_guests": 300
+  },
+  "budget": {
+    "total_inr": 2000000,
+    "currency": "INR",
+    "allocations": {
+      "Venue": 500000,
+      "Catering": 400000,
+      "Decoration": 300000,
+      "Photography": 200000,
+      "Music & Entertainment": 160000,
+      "Attire": 160000,
+      "Invitations": 80000,
+      "Miscellaneous": 200000
+    }
+  },
+  "ceremonies": [
+    {
+      "name": "Haldi",
+      "date": "2026-12-09",
+      "time": "10:00",
+      "location": "Home",
+      "duration_hours": 2
+    },
+    {
+      "name": "Mehendi",
+      "date": "2026-12-09",
+      "time": "14:00",
+      "location": "Home",
+      "duration_hours": 3
+    },
+    {
+      "name": "Sangeet",
+      "date": "2026-12-10",
+      "time": "19:00",
+      "location": "Hotel Clarks Avadh, Lucknow",
+      "duration_hours": 4
+    },
+    {
+      "name": "Wedding",
+      "date": "2026-12-11",
+      "time": "19:00",
+      "location": "Taj Hotel Lucknow",
+      "duration_hours": 3
+    },
+    {
+      "name": "Reception",
+      "date": "2026-12-12",
+      "time": "19:00",
+      "location": "Taj Hotel Lucknow",
+      "duration_hours": 5
+    }
+  ],
+  "sample_guests": [
+    {
+      "name": "Rahul Sharma",
+      "relation": "Groom's Brother",
+      "side": "groom",
+      "rsvp_status": "confirmed",
+      "dietary_preference": "vegetarian"
+    },
+    {
+      "name": "Priya Patel",
+      "relation": "Bride's Friend",
+      "side": "bride",
+      "rsvp_status": "pending",
+      "dietary_preference": "vegan"
+    },
+    {
+      "name": "Mr & Mrs Gupta",
+      "relation": "Family Friends",
+      "side": "groom",
+      "rsvp_status": "confirmed",
+      "dietary_preference": "no restrictions"
+    }
+  ],
+  "vendors": {
+    "venue": {
+      "name": "Taj Hotel Lucknow",
+      "contact": "vendor@tajhotels.com",
+      "status": "shortlisted"
+    },
+    "photographer": {
+      "name": "Sharma Studios",
+      "contact": "sharma@studios.com",
+      "status": "contacted"
+    },
+    "caterer": {
+      "name": "Royal Caterers Lucknow",
+      "contact": "royal@caterers.com",
+      "status": "shortlisted"
+    }
+  }
+}
