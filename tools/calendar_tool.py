@@ -1,5 +1,6 @@
 from google.adk.tools import FunctionTool
 from datetime import datetime
+from tools.security import sanitize_input, validate_date, log_security_event
 
 def add_wedding_event(
     ceremony_name: str,
@@ -10,22 +11,18 @@ def add_wedding_event(
 ) -> dict:
     """
     Adds a wedding ceremony event to the planner calendar.
-    
-    Args:
-        ceremony_name: Name of the ceremony (e.g. Mehendi, Sangeet, Wedding)
-        date: Date in format YYYY-MM-DD
-        time: Time in format HH:MM
-        location: Venue or location name
-        description: Additional details about the ceremony
-    
-    Returns:
-        Confirmation of the event being added
     """
-    # Security: sanitize inputs
-    ceremony_name = ceremony_name.strip()[:100]
-    location = location.strip()[:200]
-    description = description.strip()[:500]
-    
+    try:
+        # Security: validate and sanitize all inputs
+        ceremony_name = sanitize_input(ceremony_name, max_length=100)
+        date = validate_date(date)
+        location = sanitize_input(location, max_length=200)
+        description = sanitize_input(description, max_length=500)
+        time = sanitize_input(time, max_length=10)
+    except ValueError as e:
+        log_security_event("INVALID_INPUT", str(e))
+        return {"success": False, "error": str(e)}
+
     event = {
         "ceremony": ceremony_name,
         "date": date,
@@ -35,7 +32,7 @@ def add_wedding_event(
         "status": "scheduled",
         "created_at": datetime.now().isoformat()
     }
-    
+
     return {
         "success": True,
         "message": f"✅ '{ceremony_name}' scheduled on {date} at {time} at {location}",
