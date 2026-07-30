@@ -30,6 +30,10 @@ On top of this, a FastMCP server exposes four persistent tools — `set_budget`,
 - **FastMCP 3.4** — MCP server exposing persistent wedding planning tools
 - **Python 3.13** — core language
 
+## Demo
+
+Watch the full demo on YouTube: [AI Wedding Planner Agent Demo](https://youtu.be/mD0FkK251qY)
+
 ## Setup
 
 ### Prerequisites
